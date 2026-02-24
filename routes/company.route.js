@@ -24,4 +24,6 @@ router.post("/subscription", companyController.setSubscription);
 
 router.get("/check/membership/:companyId", companyController.checkMembershipStatus);
 
+router.delete("/all-delete", companyController.deleteAllCompanies);
+
 export default router;

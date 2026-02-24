@@ -201,6 +201,14 @@ const checkMembershipStatus = async (req, res) => {
   }
 };
 
+const deleteAllCompanies = async (req, res) => {
+  try {
+    await Company.deleteMany({});
+    res.json({ msg: "All companies deleted" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
 
 export default {
    
@@ -211,5 +219,6 @@ export default {
     validateProjectAccess,
     deleteCompany,
     setSubscription,
-    checkMembershipStatus
+    checkMembershipStatus,
+    deleteAllCompanies
 };
